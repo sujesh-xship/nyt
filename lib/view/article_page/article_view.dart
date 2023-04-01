@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nyt/model/NeyYorkTimesData_Model.dart';
+import 'package:nyt/view/article_page/view/details_header_widget.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleView extends StatefulWidget {
@@ -25,30 +27,57 @@ class _ArticleViewState extends State<ArticleView> {
       );
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(title: Text(widget.selectedArticleDetails.title.toString()),),
-  //     body: WebViewWidget(
-  //       controller: controller,
-  //     ),
-  //   );
-  // }
-
-
-@override
+  @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
-
-      appBar: AppBar(),
-      body: Column(
-        children: [],
-
-
+      appBar: AppBar(title: Text(widget.selectedArticleDetails.title.toString()),),
+      body: WebViewWidget(
+        controller: controller,
       ),
     );
   }
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     body: SingleChildScrollView(
+  //       child: Column(
+  //         crossAxisAlignment: CrossAxisAlignment.start,
+  //         children: [
+  //           DetailsHeaderWidget(
+  //             imagUrl: widget
+  //                 .selectedArticleDetails.media[0].mediaMetadata[0].url
+  //                 .toString(),
+  //             title: widget.selectedArticleDetails.title.toString(),
+  //             authorName: widget.selectedArticleDetails.byline.toString(),
+  //           ),
+  //           Padding(
+  //             padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+  //             child: Text(
+  //               widget.selectedArticleDetails.resultAbstract.toString(),
+  //               style: GoogleFonts.acme(
+  //                 fontSize: 14,
+  //                 fontWeight: FontWeight.w400,
+  //                 height: 1.8,
+  //                 color: Color(0xff95a6aa),
+  //               ),
+  //             ),
+  //           ),
+  //           Padding(
+  //             padding: EdgeInsets.symmetric(horizontal: 24.0),
+  //             child: Text(
+  //               widget.selectedArticleDetails.subsection.toString(),
+  //               style: GoogleFonts.acme(
+  //                 fontSize: 16,
+  //                 fontWeight: FontWeight.w700,
+  //                 height: 1.3,
+  //                 color: Color(0xff1a434e),
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  }
 
-}
