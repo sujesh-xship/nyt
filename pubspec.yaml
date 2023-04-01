@@ -38,6 +38,8 @@ dependencies:
   http: ^0.13.4
   flutter_bloc: ^8.0.0
   webview_flutter: ^4.0.7
+  google_fonts: ^3.0.1
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
