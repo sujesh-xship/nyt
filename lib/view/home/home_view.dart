@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nyt/constants/app-constants.dart';
 import 'package:nyt/service/network_service.dart';
 import 'package:nyt/view/article_page/article_view.dart';
 import 'package:nyt/view/home/bloc/home_bloc.dart';
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("NY Times Most Popular"),
+        title: const Text(AppConstants.appTitle),
       ),
       body: BlocProvider(
         create: (context) =>
@@ -36,11 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     leading: const CircleAvatar(
                       child: Icon(Icons.account_circle),
                     ),
-                    title: Text(data[index].title ?? "Not available"),
+                    title: Text(data[index].title ?? AppConstants.replacementText),
                     subtitle: Row(
                       children: [
                         Flexible(
-                            child: Text(data[index].byline ?? "Not available")),
+                            child: Text(data[index].byline ?? AppConstants.replacementText)),
                         const SizedBox(
                           width: 5,
                         ),
